@@ -5,7 +5,8 @@ MAX = 1000001
 
 # array to store
 # prime factors
-factor = [0]*(MAX + 1)
+factor = [0] * (MAX + 1)
+
 
 # function to generate all
 # prime factors of numbers
@@ -31,14 +32,14 @@ def generatePrimeFactors():
     # prime factor that divides
     # every number.
     i = 3
-    while(i * i < MAX):
+    while (i * i < MAX):
         # check if it has
         # no prime factor.
         if (factor[i] == i):
             # Initializes of j
             # starting from i*i
             j = i * i
-            while(j < MAX):
+            while (j < MAX):
                 # if it has no prime factor
                 # before, then stores the
                 # smallest prime divisor
@@ -46,6 +47,7 @@ def generatePrimeFactors():
                     factor[j] = i
                 j += i
         i += 1
+
 
 # function to calculate
 # number of factors
@@ -73,12 +75,12 @@ def calculateNoOfFactors(n):
 
     # false when prime
     # factorization is done
-    while (j > 1):
+    while j > 1:
         # if the same prime
         # number is dividing
         # n, then we increase
         # the count
-        if (factor[j] == dup):
+        if factor[j] == dup:
             c += 1
 
         # if its a new prime factor
@@ -101,6 +103,8 @@ def calculateNoOfFactors(n):
     ans = ans * (c + 1)
 
     return ans
+
+
 # Driver Code
 # generate prime factors
 # of number upto 10^6
